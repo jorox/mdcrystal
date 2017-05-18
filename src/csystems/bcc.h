@@ -15,8 +15,8 @@ class BCC: public CSystem {
 		double a; //lattice parameter
 
 	public:
-		BCC(double a); //constructor
-		BCC
+		BCC(); //default constructor
+		BCC(double a=1.0, bool conv=true); //constructor
 
 };
 

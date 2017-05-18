@@ -21,9 +21,10 @@ private:
 	Vect3 a1, a2, a3;
 
 public:
-	CSystem(Vector3 & p1, Vector3 & p2, Vector3 & p3);
+	CSystem();
+	CSystem(Vect3& p1, Vect3 & p2, Vect3 & p3);
 	void add_motif( const unsigned p[3] );
-	void get_n_basis();
+	int get_n_basis();
 	Vect3 operator [] (std::size_t idx) const;
 	bool is_primitive() const;
 };
