@@ -30,12 +30,6 @@ CSystem::CSystem(Vect3 & p1, Vect3 & p2, Vect3 & p3){
 	a1 = Vect3(p1);
 	a2 = Vect3(p2);
 	a3 = Vect3(p3);
-
-	a = a1.Norm(); b = a2.Norm(); c = a3.Norm();
-	gamma =  acos(a1.UnitVector().Dot(a2.UnitVector()));
-	alpha = acos(a2.UnitVector().Dot(a3.UnitVector()));
-	beta = acos(a1.UnitVector().Dot(a3.UnitVector()));
-
 }
 
 /**
@@ -51,15 +45,27 @@ void CSystem::add_motif( const unsigned p[3] ){
 /**
  * return number of atoms in the basis
  */
-int CSystem::get_n_basis(){
+int CSystem::get_size_basis(){
 	return motif.size();
 }
 
-Vect3 CSystem::operator [] (std::size_t idx) const {
-	return motif[idx];
+/**
+ * return a basis vector of the system
+ */
+Vect3 CSystem::operator [] (unsigned int idx) const {
+	idx = idx%3;
+	switch (idx) {
+	case 0: return a1;
+	case 1: return a2;
+	case 2: return a3;
+	}
 }
 
 bool CSystem::is_primitive() const {
-	if (motif.size == 1){ return true;}
+	if (motif.size() == 1){ return true;}
 	return false;
+}
+
+catom CSystem::get_basis_atom(std::size_t bid) const {
+	return motif[bid];
 }

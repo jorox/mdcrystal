@@ -1,6 +1,8 @@
 /*
  * csystem.h
  *
+ *	Abstract class representing a crystallographic system.
+ *
  *  Created on: May 18, 2017
  *      Author: wk234832
  */
@@ -10,23 +12,28 @@
 
 #include <list>
 #include "../vect3.h"
+#include "../catom.h"
 #include <cmath>
 
 
 class CSystem{
-private:
-	double a,b,c;
-	double alpha,beta,gamma;
-	std::list<Vect3> motif;
+protected:
+	std::list<catom> motif;
 	Vect3 a1, a2, a3;
+	void add_motif(atom &);
 
 public:
-	CSystem();
+	CSystem(); //default constructor
 	CSystem(Vect3& p1, Vect3 & p2, Vect3 & p3);
-	void add_motif( const unsigned p[3] );
-	int get_n_basis();
-	Vect3 operator [] (std::size_t idx) const;
+
+	int get_size_basis(); //number of atoms in basis
+
+	Vect3 operator [] (unsigned int idx) const; //basis atom
+
+	catom get_basis_atom(std::size_t ) const;
+
 	bool is_primitive() const;
+
 };
 
 #endif /* CSYSTEM_H_ */

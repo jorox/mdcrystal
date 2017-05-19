@@ -16,7 +16,7 @@ class BCC: public CSystem {
 
 	public:
 		BCC(); //default constructor
-		BCC(double a=1.0, bool conv=true); //constructor
+		BCC(double a); //constructor
 
 };
 
