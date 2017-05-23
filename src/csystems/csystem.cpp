@@ -9,19 +9,6 @@
 #include "csystem.h"
 #include "../constants.h"
 
-CSystem::CSystem(){
-	a1 = Vect3(1.0,0.0,0.0);
-	a2 = Vect3(0.0,1.0,0.0);
-	a3 = Vect3(0.0,0.0,1.0);
-	alpha = PI_ / 2.0;
-	beta = alpha;
-	gamma = alpha;
-	a = 0.0;
-	b = 0.0;
-	c = 0.0;
-
-}
-
 /**
  * Construct the crystal system using three vectors
  */
@@ -36,9 +23,9 @@ CSystem::CSystem(Vect3 & p1, Vect3 & p2, Vect3 & p3){
  *  Add a motif atom to the crystal system.
  *  @param p1 3 element double array 0<>1
  */
-void CSystem::add_motif( const unsigned p[3] ){
+void CSystem::add_motif(int type, unsigned double xsu, unsigned double ysu, unsigned double zsu ){
 
-	motif.push_front(Vect3(p[0],p[1],p[2])); // 0<=p1<1
+	motif.push_front(catom(type,xsu,ysu,zsu,this)); // 0<=p1<1
 
 }
 
@@ -52,12 +39,14 @@ int CSystem::get_size_basis(){
 /**
  * return a basis vector of the system
  */
-Vect3 CSystem::operator [] (unsigned int idx) const {
+Vect3* CSystem::operator [] (unsigned int idx) const {
 	idx = idx%3;
 	switch (idx) {
-	case 0: return a1;
-	case 1: return a2;
-	case 2: return a3;
+	case 0: return &a1;
+	case 1: return &a2;
+	case 2: return &a3;
+
+	default: return 0;
 	}
 }
 
@@ -68,4 +57,13 @@ bool CSystem::is_primitive() const {
 
 catom CSystem::get_basis_atom(std::size_t bid) const {
 	return motif[bid];
+}
+
+
+bool CSystem::same_space_group(CSystem& sys) const {
+	// Need to implement a way to compare two crystal systems
+	// i.e. need to find a way to show that the point group of the motif +
+	//  the Bravais lattice lead to the same space group
+	// For now just return true
+	return true;
 }

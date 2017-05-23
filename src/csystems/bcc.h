@@ -11,12 +11,12 @@
 #include "csystem.h"
 
 class BCC: public CSystem {
+
 	private:
 		double a; //lattice parameter
 
 	public:
-		BCC(); //default constructor
-		BCC(double a); //constructor
+		BCC(double ); //constructor
 
 };
 

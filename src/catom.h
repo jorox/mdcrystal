@@ -14,12 +14,12 @@
 class catom{
 
 protected:
-	vect3 coords;
-	int id;
+	Vect3 coords;
+	int type;
 	CSystem *csym;
 
 public:
-	catom(int, double, double, double, const CSystem &);
+	catom(int, double, double, double, const CSystem *);
 	catom(int, Vect3, const CSystem *);
 
 	int get_id() const; //return id
