@@ -49,6 +49,9 @@ int main(){
 
 	std::list<catom> atoms;
 
+	// create CSYSTEM for the the MD box
+	CSystem boxCS(Vect3(Lx*x_spacing, 0, 0), Vect3(0, Ly*y_spacing, 0), Vect3(0, 0, Lz*z_spacing));
+
 
 	for (int ix=nx[0]+1; ix<(nx[1]-nx[0]); ++ix){
 		for (int iy=ny[0]+1; iy<(ny[1]-ny[0]); ++iy){

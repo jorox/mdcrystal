@@ -7,16 +7,16 @@
 
 #include "catom.h"
 
-catom::catom(int basisTag, double x, double y, double z, const CSystem* sys = 0){
+catom::catom(int tag, double x, double y, double z, const CSystem* sys = 0){
 	coords = Vect3(x,y,z);
-	basisId = basisTag;
+	type = tag;
 	csym = sys;
 
 }
 
-catom::catom(int basisTag, Vect3 x, const CSystem* sys = 0){
+catom::catom(int tag, Vect3 x, const CSystem* sys = 0){
 	coords = x;
-	basisId = basisTag;
+	type = tag;
 	csym = sys;
 
 }

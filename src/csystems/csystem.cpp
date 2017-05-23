@@ -24,8 +24,10 @@ CSystem::CSystem(Vect3 & p1, Vect3 & p2, Vect3 & p3){
  *  @param p1 3 element double array 0<>1
  */
 void CSystem::add_motif(int type, unsigned double xsu, unsigned double ysu, unsigned double zsu ){
-
-	motif.push_front(catom(type,xsu,ysu,zsu,this)); // 0<=p1<1
+	MotifAtom matom;
+	matom.type = type;
+	matom.xsu = xsu; matom.ysu = ysu; matom.zsu = zsu;
+	motif.push_front(matom); // 0<=p1<1
 
 }
 

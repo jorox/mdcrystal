@@ -13,6 +13,6 @@ BCC::BCC(double latspc=1.0){
 	a3 = latspc*Vect3(0.0,0.0,1.0);
 	a = latspc;
 	BCC::add_motif(0,0.0,0.0,0.0);
-	BCC::add_motif(1,0.5,0.5,0.5);
+	BCC::add_motif(0,0.5,0.5,0.5);
 
 }

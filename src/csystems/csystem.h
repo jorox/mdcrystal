@@ -14,10 +14,14 @@
 #include "../vect3.h"
 #include "../catom.h"
 
+struct MotifAtom{
+	int type;
+	double xsu, ysu, zsu;
+};
 
 class CSystem{
 protected:
-	std::list<catom> motif;
+	std::list<MotifAtom> motif;
 	Vect3 a1, a2, a3;
 
 	void add_motif(int, unsigned double, unsigned double, unsigned double); // add a basis atom
