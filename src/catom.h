@@ -1,32 +1,44 @@
-/*
- * catom.h
+/**
+ * \class CAtom
  *
- *  Created on: May 19, 2017
- *      Author: wk234832
+ * \brief CAtom(id, type, x, y, z)
+ *
+ *  This class represents an atom in real space. The atom has an is identified by an id and a type
+ *  The coordinates are in Angstroms
+ *
+ * \author Wassim K
+ *
+ * \version 0.1
+ *
+ * \date $Date: 2017/10/26$
+ *
  */
 
 #ifndef CATOM_H_
 #define CATOM_H_
 
 #include "../vect3.h"
-#include "csystems/csystem.h"
 
-class catom{
-
-protected:
-	Vect3 coords;
-	int type;
-	CSystem *csym;
+class CAtom: public Vect3
+{
+private:
+	int _type; ///< type
+	int _id; ///< id
 
 public:
-	catom(int, double, double, double, const CSystem *);
-	catom(int, Vect3, const CSystem *);
+	/// Create a CAtom
+	catom(int, int, double, double, double);
 
-	int get_id() const; //return id
+	/// Create a CAtom
+	catom(int, int, Vect3);
 
-	Vect3 get_unit_coords() const; //coordinates
+	/// Return the id of the atom
+	inline int get_id()
+	{return this->_id;}
 
-	Vect3 get_rspace_coords() const;
+	/// Return the type of the atom
+	inline int get_type()
+	{return this->_type;}
 
 };
 
