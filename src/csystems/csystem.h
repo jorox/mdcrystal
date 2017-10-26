@@ -14,24 +14,27 @@
 #include "../vect3.h"
 #include "../catom.h"
 
-struct MotifAtom{
+struct MotifPoint{
 	int type;
 	double xsu, ysu, zsu;
 };
 
 class CSystem{
 protected:
-	std::list<MotifAtom> motif;
+	std::list<MotifPoint> motif;
 	Vect3 a1, a2, a3;
 
 	void add_motif(int, unsigned double, unsigned double, unsigned double); // add a basis atom
 
 public:
 
-	CSystem(Vect3& p1, Vect3& p2, Vect3& p3);
+	/// Create a CSystem
+	CSystem(Vect3& p1, Vect3& p2, Vect3& p3, std::list<Vect3>& bs);
 
-	int get_size_basis(); //number of atoms in basis
+	/// Number of motif points
+	int get_count_motif();
 
+	/// Return
 	Vect3* operator [] (unsigned int idx) const; // return a lattice vector
 
 	catom get_basis_atom(std::size_t ) const; // return a basis atom
