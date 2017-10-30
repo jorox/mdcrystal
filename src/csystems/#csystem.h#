@@ -16,7 +16,7 @@
 
 class CSystem{
 protected:
-	std::list<CAtom> motif;
+	std::list<CAtom> _motif;
 	Vect3 _a1, _a2, _a3;
 
 public:

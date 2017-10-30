@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(mdcrystal_test)
+
+#Manually add sources
+set(SOURCES src/mdcrystal.cpp src/catom.cpp src

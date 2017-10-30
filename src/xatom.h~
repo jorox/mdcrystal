@@ -23,23 +23,17 @@ class CAtom: public Vect3
 {
 private:
 	int _type; ///< type
-	int _id; ///< id
-	double _x1, _x2, _x3; ///< coordinates
 
 public:
 	/// Create a CAtom
-	catom(int, int, double, double, double);
+	catom(int, double, double, double);
 
 	/// Create a CAtom
-	catom(int, int, Vect3);
+	catom(int, Vect3);
 
 	/// Return the type of the atom
 	inline int get_type()
 	{return this->_type;}
-
-	/// Return the id of the atom
-	inline int get_id()
-	{return this->_id;}
 
 };
 
