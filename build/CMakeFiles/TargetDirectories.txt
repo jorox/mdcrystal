@@ -1,3 +1,0 @@
-/home/wk234832/work/C++/mdcrystal/build/CMakeFiles/mdcrystal.dir
-/home/wk234832/work/C++/mdcrystal/build/packages/tinyxml2/CMakeFiles/tinyxml2.dir
-/home/wk234832/work/C++/mdcrystal/build/packages/tinyxml2/CMakeFiles/uninstall.dir

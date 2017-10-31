@@ -1,1 +1,0 @@
-/opt/intel/bin/icpc   -g    CMakeFiles/mdcrystal.dir/src/aatom.cpp.o CMakeFiles/mdcrystal.dir/src/mdcrystal.cpp.o CMakeFiles/mdcrystal.dir/src/vect3.cpp.o  -o mdcrystal -rdynamic packages/tinyxml2/libtinyxml2d.so.5.0.1 -Wl,-rpath,/home/wk234832/work/C++/mdcrystal/build/packages/tinyxml2: 
