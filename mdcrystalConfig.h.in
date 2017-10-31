@@ -1,0 +1,4 @@
+// the configured options and settings for Tutorial
+#define mdcrystal_VERSION_MAJOR @mdcrystal_VERSION_MAJOR@
+#define mdcrystal_VERSION_MINOR @mdcrystal_VERSION_MINOR@
+#define mdcrystal_VERSION_PATCH @mdcrystal_VERSION_PATCH@ 

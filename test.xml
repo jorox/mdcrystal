@@ -1,0 +1,17 @@
+<root>
+  <crystallo type="custom" style="xyz" id="bcc_conv">
+    <scale>1.0</scale>
+    <a1 prefac="1.0" x="1.0" y="0.0" z="0.0" />
+    <a2 prefac="1.0" x="0.0" y="1.0" z="0.0" />
+    <a3 prefac="1.0" x="0.0" y="0.0" z="1.0" />
+    <atom xsu="0.0" ysu="0.0" zsu="0.0" type="1" />
+    <atom xsu="0.5" ysu="0.5" zsu="0.5" type="1" />
+  </crystallo>
+  <macro type="block" style="n" id="1">
+    <origin x="0.0" y="0.0" z="0.0" />
+    <c1 h="1" k="0" l="0" n="5" />
+    <c2 h="0" k="1" l="0" n="5" />
+    <c3 h="0" k="0" l="1" n="5" />
+    <unit id="bcc_conv" />
+  </macro>
+</root>

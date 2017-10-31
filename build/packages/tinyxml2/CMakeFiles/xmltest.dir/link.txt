@@ -1,0 +1,1 @@
+/opt/intel/bin/icpc       CMakeFiles/xmltest.dir/xmltest.cpp.o  -o xmltest -rdynamic libtinyxml2.so.5.0.1 -Wl,-rpath,/home/wk234832/work/C++/mdcrystal/build/packages/tinyxml2 

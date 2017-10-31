@@ -1,0 +1,1 @@
+/opt/intel/bin/icpc  -fPIC -g -DDEBUG   -shared -Wl,-soname,libtinyxml2d.so.5 -o libtinyxml2d.so.5.0.1 CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o 

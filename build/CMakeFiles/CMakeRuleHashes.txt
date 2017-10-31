@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+52a578a21f15dc34a5aecd16fcd29d7b packages/tinyxml2/CMakeFiles/uninstall
